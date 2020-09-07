@@ -1,0 +1,128 @@
+/*  *   *   *   *   *   *   *   *
+*           BREAKPOINTS         *
+*   *   *   *   *   *   *   *   */
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1024px;
+
+/*  *   *   *   *   *   *   *   *
+*            OVERLAY            *
+*   *   *   *   *   *   *   *   */
+$primary-overlay: rgba(50, 146, 166, 0.8);
+$secondary-overlay: rgba(0, 0, 0, 0.8);
+
+body {
+  overflow-x: hidden;
+}
+
+/*  *   *   *   *   *   *   *   *
+*       CUSTOM COLOR BG         *
+*   *   *   *   *   *   *   *   */
+.bg-purple {
+  background: #652c92;
+}
+
+/*  *   *   *   *   *   *   *   *
+*       NAVBAR SECTION          *
+*   *   *   *   *   *   *   *   */
+.navbar {
+  .nav-link {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    padding-left: 1rem !important;
+  }
+
+  .nav-item.active {
+    border-left: #444 3px solid;
+  }
+}
+
+/*  *   *   *   *   *   *   *   *
+*       SHOWCASE SECTION        *
+*   *   *   *   *   *   *   *   */
+#showcase {
+  position: relative;
+  background: url("../img/");
+  min-height: 600px;
+
+  .primary-overlay {
+    background: $primary-overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .secondary-overlay {
+    background: $secondary-overlay;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .container-fluid {
+    min-height: 600px !important;
+  }
+}
+
+/*  *   *   *   *   *   *   *   *
+*       CAPITALIZE ITEMS        *
+*   *   *   *   *   *   *   *   */
+.capitalize {
+  text-transform: uppercase;
+}
+
+/*  *   *   *   *   *   *   *   *
+*          FLIP CARDS           *
+*   *   *   *   *   *   *   *   */
+.card-container {
+  perspective: 700px;
+
+  li {
+    font-size: 0.8rem;
+  }
+}
+
+.card-flip,
+.card-container {
+  transform-style: preserve-3d;
+  transition: all 0.7s ease;
+}
+
+.card-flip div {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.back {
+  transform: rotateY(-180deg);
+}
+
+.card-container:hover .card-flip {
+  transform: rotateY(180deg);
+}
+
+.card-flip {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  grid-template-areas: "frontAndBack";
+  transform-style: preserve-3d;
+  transition: all 0.7s ease;
+}
+
+.front {
+  grid-area: frontAndBack;
+}
+
+.back {
+  grid-area: frontAndBack;
+  transform: rotateY(-180deg);
+}
+
+.card-container {
+  display: grid;
+  perspective: 700px;
+}
