@@ -32,27 +32,10 @@ body {
 *   *   *   *   *   *   *   *   */
 #showcase {
   position: relative;
-  background: url("../img/");
   min-height: 600px;
 }
-#showcase .primary-overlay {
-  background: rgba(50, 146, 166, 0.8);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-#showcase .secondary-overlay {
-  background: rgba(0, 0, 0, 0.8);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
 #showcase .container-fluid {
-  min-height: 600px !important;
+  min-height: 600px;
 }
 
 /*  *   *   *   *   *   *   *   *
@@ -111,6 +94,25 @@ body {
 .card-container {
   display: grid;
   perspective: 700px;
+}
+
+/*  *   *   *   *   *   *   *   *
+*         MEDIA QUERIES         *
+*   *   *   *   *   *   *   *   */
+@media (max-width: 767px) {
+  #showcase h1 {
+    font-size: 4.5rem !important;
+  }
+}
+@media (max-width: 492px) {
+  #showcase h1 {
+    font-size: 3rem !important;
+  }
+}
+@media (max-width: 339px) {
+  #showcase h1 {
+    font-size: 2.75rem !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
