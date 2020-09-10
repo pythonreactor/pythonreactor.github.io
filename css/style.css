@@ -120,13 +120,6 @@ body {
   #showcase h1 {
     font-size: 3rem !important;
   }
-
-  #testimonials .slick-prev.slick-arrow {
-    padding-left: 12px;
-  }
-  #testimonials .slick-next.slick-arrow {
-    padding-right: 30px;
-  }
 }
 @media (max-width: 339px) {
   #showcase h1 {
