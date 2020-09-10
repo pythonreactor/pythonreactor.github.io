@@ -148,6 +148,15 @@ body {
       padding-left: 8%;
     }
   }
+
+  .card-flip,
+  .card-container {
+    transition: all 0.3s ease;
+  }
+
+  .card-flip {
+    transition: all 0.3s ease;
+  }
 }
 
 @media (max-width: 339px) {
