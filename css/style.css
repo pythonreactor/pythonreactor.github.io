@@ -5,7 +5,7 @@
 *            OVERLAY            *
 *   *   *   *   *   *   *   *   */
 body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 /*  *   *   *   *   *   *   *   *
@@ -97,6 +97,18 @@ body {
 }
 
 /*  *   *   *   *   *   *   *   *
+*       SLICK SLIDER ARROWS     *
+*   *   *   *   *   *   *   *   */
+.slick-next:before {
+  color: #000;
+  padding-right: 5px;
+}
+
+.slick-prev:before {
+  color: #000;
+}
+
+/*  *   *   *   *   *   *   *   *
 *         MEDIA QUERIES         *
 *   *   *   *   *   *   *   *   */
 @media (max-width: 767px) {
@@ -107,6 +119,13 @@ body {
 @media (max-width: 492px) {
   #showcase h1 {
     font-size: 3rem !important;
+  }
+
+  #testimonials .slick-prev.slick-arrow {
+    padding-left: 12px;
+  }
+  #testimonials .slick-next.slick-arrow {
+    padding-right: 30px;
   }
 }
 @media (max-width: 339px) {

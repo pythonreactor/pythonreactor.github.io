@@ -19,13 +19,28 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"
+      integrity="sha512-wR4oNhLBHf7smjy0K4oqzdWumd+r5/+6QO/vDda76MW5iug4PT7v86FoEkySIJft3XA0Ae6axhIvHrqwm793Nw=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"
+      integrity="sha512-6lLUdeQ5uheMFbWm3CP271l14RsX1xtx+J5x2yeIDkkiBpeVTNhTqijME7GgRKKi6hCqovwCoBTlRBEC20M8Mg=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>Michael Gilbert - Full Stack Web Developer</title>
   </head>
 
   <body>
     <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav
+      id="main-nav"
+      class="navbar navbar-expand-md navbar-dark bg-dark sticky-top"
+    >
       <div class="container">
         <a href="#" class="navbar-brand">
           <img
@@ -48,7 +63,7 @@
           <hr />
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a href="#home" class="nav-link">Home</a>
+              <a href="#showcase" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
               <a href="#about" class="nav-link">About</a>
@@ -75,6 +90,7 @@
         <div class="row">
           <div class="col text-center text-white">
             <h1 class="display-2 py-3">Michael Gilbert</h1>
+            <h3 class="display4">Full Stack Web Developer</h3>
             <img
               src="img/Michael_Headshot.jpg"
               alt=""
@@ -82,12 +98,60 @@
               width="150"
               height="150"
             />
-            <p class="lead"><em>Your next best investment</em></p>
+            <p class="lead pt-3"><em>Your next best investment</em></p>
             <a
               href="https://linkedin.com/in/mister-gilbert"
               class="btn btn-outline-light mt-3"
               >Contact Me Today</a
             >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="pt-4 pd-4 bg-white text-black">
+      <div class="container">
+        <h2 class="text-center capitalize">Testimonials</h2>
+        <div class="row text-center">
+          <div class="col">
+            <div class="slider">
+              <div>
+                <blockquote class="blockquote border-0">
+                  <p class="mb-0">
+                    He works hard, is very dedicated to his work, and sometimes
+                    forgets he has a wife due to how much he enjoys his work.
+                  </p>
+                  <footer class="blockquote-footer">
+                    <cite title="My Wife">My Wife</cite>
+                  </footer>
+                </blockquote>
+              </div>
+
+              <div>
+                <blockquote class="blockquote border-0">
+                  <p class="mb-0">
+                    I cried tears, both happy and sad when he left. We miss him
+                    but hope the next employer treats him better.
+                  </p>
+                  <footer class="blockquote-footer">
+                    <cite title="Pervious Employer">Previous Employer</cite>
+                  </footer>
+                </blockquote>
+              </div>
+
+              <div>
+                <blockquote class="blockquote border-0">
+                  <p class="mb-0">
+                    This man is something special. Any employer would be so
+                    lucky to have him and his upbeat attitude!
+                  </p>
+                  <footer class="blockquote-footer">
+                    <cite title="My Mom">My Mom</cite>
+                  </footer>
+                </blockquote>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -435,10 +499,56 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"
+      integrity="sha512-WNZwVebQjhSxEzwbettGuQgWxbpYdoLf7mH+25A7sfQbbxKeS5SQ9QBf97zOY4nOlwtksgDA/czSTmfj4DUEiQ=="
+      crossorigin="anonymous"
+    ></script>
 
     <script>
       // Get the current year for the copyright
       $("#year").text(new Date().getFullYear());
+
+      // Testimonial Slider
+      $(".slider").slick({
+        autoplay: true,
+        autoplaySpeed: 6000,
+        pauseOnFocus: false,
+        pauseOnHover: true,
+        pauseOnDotsHover: false,
+        infinite: true,
+        slideToShow: 1,
+        slideToScroll: 1,
+        fade: false,
+        cssEase: "linear",
+      });
+
+      // Scroll Spy
+      $("body").scrollspy({ target: "#main-nav" });
+
+      // Add smooth scrolling
+      $("#main-nav a").on("click", function (e) {
+        // Check for hash value
+        if (this.hash !== "") {
+          // Prevent default behavior
+          e.preventDefault();
+
+          // Store hash
+          const hash = this.hash;
+
+          // Animate smooth scroll
+          $("html, body").animate(
+            {
+              scrollTop: $(hash).offset().top,
+            },
+            800,
+            function () {
+              // Add hash to the URL after scroll
+              window.location.hash = hash;
+            }
+          );
+        }
+      });
     </script>
   </body>
 </html>
