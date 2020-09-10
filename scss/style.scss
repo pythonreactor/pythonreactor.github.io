@@ -128,12 +128,24 @@ body {
       font-size: 4.5rem !important;
     }
   }
+
+  #testimonials {
+    .row {
+      padding-left: 4%;
+    }
+  }
 }
 
 @media (max-width: 492px) {
   #showcase {
     h1 {
       font-size: 3rem !important;
+    }
+  }
+
+  #testimonials {
+    .row {
+      padding-left: 8%;
     }
   }
 }
